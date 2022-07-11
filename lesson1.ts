@@ -4,7 +4,7 @@ console.log(A1,A2);
 const A3 = A1 + A2;
 console.log(A1 + A2);
 
-
+const z: string = "A string"
 console.log("Book");
 
 
@@ -39,3 +39,6 @@ function F2(GetNumber:(Num1:number, Num2:number)=>number){
 }
 F2(AddTwoNumbers)
 F2(MultiplyTwoNumbers)
+
+let SelectedStatesbe : string = [Anambra, Awka, Abuja];
+console.log(SelectedStatesbe);

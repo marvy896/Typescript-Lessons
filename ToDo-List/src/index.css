@@ -1,27 +1,219 @@
 @charset "utf-8";
+header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: #ff5100;
+  }
 h1 {
+    background-color: DodgerBlue;
+    padding: 15px;
     font-size: 48px;
     text-align: center;
     color: #ff5100;
     text-shadow: black 1px 1px 2px, black 1px 1px 2px;
 }
-table,tr,td,th { 
+
+h2 {
+    border: 2px solid dodgerblue;
+    font-size: 38px;
+    text-align: center;
+    color: #0606fc;
+    padding: 15px;
+}
+
+h3 {
+    font-size: 33px;
+    border: 2px solid dodgerblue;
+    padding: 15px;
+    text-align: center;
+    color: #070707;
+}
+
+table,
+tr,
+td,
+th {
+    color: rgb(28, 4, 245);
     width: 50%;
     margin: 0% auto;
     border: 1px solid goldenrod;
-/* border-collapse: collapse; */
+    padding: 15px;
+    /* border-collapse: collapse; */
 }
+
 th {
     font-size: 24px;
-    font-weight:800;
+    font-weight: 800;
 }
+
 td {
     font-size: 20px;
     font-weight: 400;
 }
-body {
-    background-color: brown ;
-    background-image: url(../adolfo-felix-Yi9-QIObQ1o-unsplash.jpg);
-    /* background-size: 100% 100%;
-    background-repeat: no-repeat; */
+
+
+div {
+    background-color: black;
+    color: white;
+    padding: 20px;
+
+}
+
+img {
+    width: 400px;
+    height: 700px;
+    border: 2px solid powderblue;
+    padding: 15px;
+}
+
+.town {
+    background-color: orange;
+    color: rgb(8, 8, 8);
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: rgb(0, 67, 99);
+}
+nav {
+    float: left;
+    width: 20%;
+    height: 550px;
+    background: rgb(44, 42, 54);
+    padding: 20px;
+}
+nav ul {
+    font-weight: 300;
+    color: #f4f4fa;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+
+  input {
+    border-radius: 10px;
+    background-color: rgb(253, 85, 7);
+    color: white;
+    border-color: black;
+    width: 100%;
+}
+
+/* input [type="text"] {
+    border-radius: 10px;
+    text-align: right;
+    background-color: black;
+    color: white;
+    border-color: white;
+    width: 100%; */
+/* } */
+
+input hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+input active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+        inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+button {
+    background-color: #ff5100;
+    color: bisque;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #fbfbfd;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0, 2px;
+    background-color: #bbb;
+    border-radius: 50px;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <h1>Second Project</h1>
+</head>
+
+<body>
+    <div class="town">
+        <h2>This is a format of a Calculator</h2>
+    </div>
+    <nav>
+        <ul>
+          <li><a href="index.html">ToDo List Task</a></li>
+        </ul>
+      </nav>
+      <table border="2" , class="table">
+        ...
+        <table>
+            <caption>
+                <h3>My Calculator</h3>
+            </caption>
+            <tr>
+                <td><input type="button" value="C" onclick="clr()" /></td>
+                <td colspan="3"><input type="text" id="textval" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="+" onclick="display('+')" /></td>
+                <td><input type="button" value="1" onclick="display('1')" /></td>
+                <td><input type="button" value="2" onclick="display('2')" /></td>
+                <td><input type="button" value="3" onclick="display('3')" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="-" onclick="display('-')" /></td>
+                <td><input type="button" value="4" onclick="display('4')" /></td>
+                <td><input type="button" value="5" onclick="display('5')" /></td>
+                <td><input type="button" value="6" onclick="display('6')" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="*" onclick="display('*')" /></td>
+                <td><input type="button" value="7" onclick="display('7')" /></td>
+                <td><input type="button" value="8" onclick="display('8')" /></td>
+                <td><input type="button" value="9" onclick="display('9')" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="/" onclick="display('/')" /></td>
+                <td><input type="button" value="." onclick="display('.')" /></td>
+                <td><input type="button" value="0" onclick="display('0')" /></td>
+                <td><input type="button" value="=" onclick="result()" /></td>
+            </tr>
+        </table>
+    
+        <h3><button type="button"><a href="index.html">Click Me the previous task!</a></button></h3>
+
+        <div class="slideshow-container">
+            <div class="mySlides,fade">
+                <div class="numbertext">1/4</div>
+                <img src="img1.jpg" style="width:100%">
+                <div class="text">Caption Text</div>
+            </div>
+
+            <div class="mySlides, fade">
+                <div class="numbertext">2/4</div>
+                <img src="img2.jpg" style="width:100%">
+                <div class="text">Caption Two</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3/4</div>
+                <img src="img3.jpg" style="width:100%">
+                <div class="text">Caption Three</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4/4</div>
+                <img src="img4.jpg" style="width:100%">
+                <div class="text">Caption four</div>
+            </div>
+            <!-- Next and Previous button -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+</body>
+<footer>
+    <h3><button type="button"><a href="index.html">Click Me the previous task!</a></button></h3>
+</footer>
+
+</html>

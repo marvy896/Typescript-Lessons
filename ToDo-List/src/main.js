@@ -5,43 +5,59 @@ function NewItemButton() {
     console.log(NewItemText);
     AddTask(NewItemText);
 }
+/**@type{{title:string, checked: boolean,}[]}   */
 let tasks = [];
 document.querySelector("#NewItemButton").onclick = () => NewItemButton();
-let i = 0;
+// let i = 0;
 function AddTask(NewItemText) {
-    tasks.push(NewItemText)
-    let NewHtml = (
-        `<tr id= ${i}>
-<td>${NewItemText}</td>
-<td>
-  <input type="checkbox"/>
-</td>
-<td> <button onclick= "(Deletebutton(${i}))">Delete</button>
-</td>
-</tr>`)
-
-    let innerHTML = document.querySelector("tbody").innerHTML
-    let finalHtml = (innerHTML + NewHtml);
-    document.querySelector("tbody").innerHTML = finalHtml;
-    i++;
+    tasks.push({
+        title: NewItemText, checked: false 
+    })
+    RefreshTable()
 }
+
 function RefreshTable() {
-    document.querySelector('tbody').innerHTML = ' '
-   for (let task of tasks) {
-   let NewHtml = (
-        `<tr id= ${i}>
-<td>${NewItemText}</td>
-<td>
-  <input type="checkbox"/>
-</td>
-<td> <button onclick= "(Deletebutton(${i}))">Delete</button>
-</td>
-</tr>`)
-let innerHTML = document.querySelector("tbody").innerHTML
-    let finalHtml = (innerHTML + NewHtml);
-    document.querySelector("tbody").innerHTML = finalHtml;
-    i++;
-}}
+    document.querySelector('tbody').innerHTML = tasks.map ((NewItemText, i)=>`<tr id= ${i}>
+   <td>${NewItemText.title}</td>
+   <td>
+     <input type="checkbox" onchange = "addeventlistener(${i})" id="checkbox-${i}"
+      ${NewItemText.checked?"checked":""}/>
+
+   </td>
+   <td> <button onclick= "(Deletebutton(${i}))">Delete</button></td>
+   <td> <button onclick= "(moveUp(${i}))">Move Up</button></td>
+   <td> <button onclick= "(moveDown(${i}))">Move Down</button></td>
+   </tr>`).join("")
+}
+ function addeventlistener(i){
+    let checkbox = document.querySelector(`#checkbox-${i}`).checked;
+    tasks[i].checked = checkbox
+    console.log(checkbox)
+ }
+
+
+//document.getElementById('#checkbox')
+function moveUp(i){
+    if(i==0) return
+    // if (checkbox==true) return 
+    let move1 = tasks[i];
+    let move2 = tasks[i-1];
+    tasks[i] = move2;
+    tasks[i-1] = move1;
+    RefreshTable() 
+ 
+}
+function moveDown(i){
+    if(i==tasks.length -1 ) return
+    let move1 = tasks[i];
+    let move2 = tasks[i+1];
+    tasks[i] = move2;
+    tasks[i+1] = move1;
+    RefreshTable()
+}
+// if(checkbox == 'true') {
+//     moveDown
+// }
 AddTask("Sweep");
 AddTask("School Run");
 AddTask("Brush");
@@ -56,8 +72,10 @@ AddTask("Games");
 // thirdly to be able to remove the items in the desired row
 
 function Deletebutton(identifier) {
-    let Row = document.getElementById(identifier);
-    Row.parentNode.removeChild(Row);
+    tasks.splice(identifier, 1)
+    RefreshTable()
+    // let Row = document.getElementById(identifier);
+    // Row.parentNode.removeChild(Row);
     // console.log("Delete");
     // console.log(identifier)
     // console.log(Row)
